@@ -31,20 +31,25 @@ export default function Main() {
     );
   } else if (authState.isLogged) {
     return (
-      <>
-        <IndexPageProvider>
-          <div
-            style={{ display: "inline-grid", gridTemplateColumns: "40% 100%" }}
-          >
+      <IndexPageProvider>
+        <Grid
+          container
+          direction="row"
+          justify="flex-start"
+          alignItems="flex-start"
+        >
+          <Grid item>
             <MyNotes />
+          </Grid>
+          <Grid item>
             <Router>
               <Route exact path="/">
                 <IndexPage />
               </Route>
             </Router>
-          </div>
-        </IndexPageProvider>
-      </>
+          </Grid>
+        </Grid>
+      </IndexPageProvider>
     );
   }
 }

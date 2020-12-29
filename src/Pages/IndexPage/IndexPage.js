@@ -33,7 +33,12 @@ const IndexPage = () => {
       className={classes.root}
     >
       <Grid item>
-        <Grid container direction="column" justify="center" alignItems="center">
+        <Grid
+          container
+          direction="column"
+          justify="flex-start"
+          alignItems="flex-start"
+        >
           <Grid item>
             <AddNoteBoard />
           </Grid>
