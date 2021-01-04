@@ -6,19 +6,21 @@ import ListItemAvatar from "@material-ui/core/ListItemAvatar";
 import Avatar from "@material-ui/core/Avatar";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
+import moment from "moment";
+
 const useStyles = makeStyles((theme) => ({
   inline: {
     display: "inline",
   },
 }));
-export default function Note() {
+export default function Note({ title, time_Posted, content }) {
   const classes = useStyles();
   return (
     <>
       {" "}
       <ListItem alignItems="flex-start">
         <ListItemText
-          primary="Brunch this weekend?"
+          primary={title}
           secondary={
             <React.Fragment>
               <Typography
@@ -27,9 +29,9 @@ export default function Note() {
                 className={classes.inline}
                 color="textPrimary"
               >
-                {"Wedensday"}
+                {time_Posted}
               </Typography>
-              {" — I'll be in your neighborhood doing errands this…"}
+              {content}
             </React.Fragment>
           }
         />

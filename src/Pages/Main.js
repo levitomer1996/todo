@@ -6,7 +6,7 @@ import Signin from "./SigninPage/SignInPage";
 import useSignin from "./SigninPage/useSignin";
 import SignupPage from "./SignupPage/SignupPage";
 import Grid from "@material-ui/core/Grid";
-import MyNotes from "./MainMenu/MyNotes";
+import GroupNotes from "./GroupNotes/GroupNotes";
 import IndexPage from "./IndexPage/IndexPage";
 import { IndexPageProvider } from "../Context/IndexPageContex";
 export default function Main() {
@@ -39,7 +39,7 @@ export default function Main() {
           alignItems="flex-start"
         >
           <Grid item>
-            <MyNotes />
+            <GroupNotes />
           </Grid>
           <Grid item>
             <Router>

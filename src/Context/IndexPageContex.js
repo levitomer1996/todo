@@ -11,6 +11,8 @@ const IndexPageReducer = (state, action) => {
       return { ...state, colorPicker: action.payload };
     case "add_notes_list":
       return { ...state, notes: action.payload };
+    case "set_group_notes_list":
+      return { ...state, groupNotes: action.payload };
     default:
       break;
   }
@@ -21,6 +23,7 @@ export const IndexPageProvider = ({ children }) => {
     isColorPickerModalOpen: false,
     colorPicker: "#3f51b5",
     notes: [],
+    groupNotes: [],
   });
 
   const openColorPicker = () => {
@@ -33,7 +36,12 @@ export const IndexPageProvider = ({ children }) => {
   const addNotesList = (data) => {
     dispatch({ type: "add_notes_list", payload: data });
   };
-
+  const setRequestsList = (data) => {
+    dispatch({ type: "set_requests_list", payload: data });
+  };
+  const setGroupNotes = (data) => {
+    dispatch({ type: "set_group_notes_list", payload: data });
+  };
   return (
     <IndexPageContext.Provider
       value={{
@@ -41,6 +49,8 @@ export const IndexPageProvider = ({ children }) => {
         openColorPicker,
         setColorPickerColor,
         addNotesList,
+        setRequestsList,
+        setGroupNotes,
       }}
     >
       {children}

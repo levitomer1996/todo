@@ -47,7 +47,11 @@ export default function BootStrapRegisterInput({
   width,
   textChangeFunction,
   onChangeFunction,
+  rows,
 }) {
+  useEffect(() => {
+    console.log(type);
+  }, []);
   return (
     <FormControl>
       <InputLabel
@@ -60,7 +64,10 @@ export default function BootStrapRegisterInput({
       <Input
         type={type}
         style={{ width: width ? width : "auto" }}
-        onChange={(e) => onChangeFunction(e.target.value)}
+        onChange={(e) => {
+          onChangeFunction(e.target.value);
+        }}
+        rows={rows ? rows : 1}
       />
     </FormControl>
   );

@@ -4,6 +4,7 @@ import { IconButton } from "@material-ui/core";
 import Menu from "@material-ui/core/Menu";
 import MenuItem from "@material-ui/core/MenuItem";
 import AuthContext from "../../../Context/AuthContext";
+import CreateGroupModal from "./CreateGroupModal";
 
 export default function AccountIcon() {
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -19,7 +20,7 @@ export default function AccountIcon() {
   return (
     <div>
       <IconButton onClick={handleClick}>
-        <AccountCircleIcon />
+        <AccountCircleIcon fontSize="large" />
       </IconButton>
 
       <Menu
@@ -29,8 +30,11 @@ export default function AccountIcon() {
         open={Boolean(anchorEl)}
         onClose={handleClose}
       >
-        <MenuItem onClick={handleClose}>Profile</MenuItem>
-        <MenuItem onClick={handleClose}>My account</MenuItem>
+        <MenuItem onClick={handleClose}>
+          {" "}
+          <CreateGroupModal />
+        </MenuItem>
+
         <MenuItem
           onClick={() => {
             handleClose();
